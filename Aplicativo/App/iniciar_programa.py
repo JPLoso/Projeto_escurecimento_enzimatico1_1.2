@@ -1,5 +1,5 @@
 #Importa uma função interna e os(Permite mecher com arquivos do sistema)
-from gerar_grafico import gerar_grafico
+from Aplicativo.App.gerar_grafico import gerar_grafico
 import os
 
 #Define a função que inicia o programa

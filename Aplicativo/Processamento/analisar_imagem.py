@@ -1,5 +1,5 @@
 #Importação da função interna e do responsavel por analise de imagens
-from calc_percentual import calc_percentuais
+from Aplicativo.Processamento.calc_percentual import calc_percentuais
 import cv2
 
 #Define a função analisar imagem

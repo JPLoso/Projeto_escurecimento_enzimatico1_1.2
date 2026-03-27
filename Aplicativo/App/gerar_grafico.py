@@ -1,8 +1,8 @@
 #Importações de funções internas
-from plotar_grafico import plotar_grafico
-from analisar_imagem import analisar_imagem
-from criar_mascara import criar_mascara
-from carregar_imagem import carregar_imagem
+from Aplicativo.Visualizacao.plotar_grafico import plotar_grafico
+from Aplicativo.Processamento.analisar_imagem import analisar_imagem
+from Aplicativo.Processamento.criar_mascara import criar_mascara
+from Aplicativo.Processamento.carregar_imagem import carregar_imagem
 
 #Define a função para gerar grafico
 def gerar_grafico(caminho):
