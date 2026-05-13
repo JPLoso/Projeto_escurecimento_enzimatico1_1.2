@@ -1,3 +1,4 @@
+#selecionar_imagem.py
 #Importando filedialog e os
 from tkinter import filedialog
 import os

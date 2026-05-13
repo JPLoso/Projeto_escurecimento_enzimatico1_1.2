@@ -1,3 +1,4 @@
+#analisar_imagem.py
 #Importação da função interna e do responsavel por analise de imagens
 from Aplicativo.Processamento.calc_percentual import calc_percentuais
 import cv2

@@ -1,3 +1,4 @@
+#iniciar_programa.py
 #Importa uma função interna e os(Permite mecher com arquivos do sistema)
 from Aplicativo.App.gerar_grafico import gerar_grafico
 import os

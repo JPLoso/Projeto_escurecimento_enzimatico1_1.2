@@ -67,12 +67,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projeto/Arquivos/gerar_grafico.py.md",
+                "file": "Resultados/Primeira tentativa/T01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gerar_grafico.py"
+              "title": "T01"
             }
           }
         ],
@@ -226,13 +226,6 @@
   },
   "active": "e82bf50c7e715387",
   "lastOpenFiles": [
-    "Projeto/Arquivos/criar_mascara.py.md",
-    "Projeto/Arquivos/gerar_grafico.py.md",
-    "Projeto/Arquivos/iniciar_programa.py.md",
-    "Projeto/Arquivos/main.py.md",
-    "Projeto/Arquivos/plotar_grafico.py.md",
-    "Projeto/Arquivos/selecionar_imagem.py.md",
-    "Projeto/Arquivos/calc_percentual.py.md",
     "Resultados/Primeira tentativa/T10.md",
     "Resultados/Primeira tentativa/T09.md",
     "Resultados/Primeira tentativa/T08.md",
@@ -244,15 +237,22 @@
     "Resultados/Primeira tentativa/T02.md",
     "Resultados/Primeira tentativa/T01.md",
     "Experimentos/experimento 1 - maças/T8.md",
-    "Experimentos/experimento 1 - maças/T10.md",
-    "Experimentos/experimento 1 - maças/T9.md",
+    "Resultados/Primeira tentativa.zip",
+    "Resultados/Primeira tentativa",
     "Experimentos/experimento 1 - maças/T7.md",
     "Experimentos/experimento 1 - maças/T6.md",
     "Experimentos/experimento 1 - maças/T5.md",
     "Experimentos/experimento 1 - maças/T4.md",
     "Experimentos/experimento 1 - maças/T3.md",
     "Experimentos/experimento 1 - maças/T2.md",
-    "Resultados/Primeira tentativa",
+    "Experimentos/experimento 1 - maças/T1.md",
+    "Projeto/Arquivos/gerar_grafico.py.md",
+    "Projeto/Arquivos/criar_mascara.py.md",
+    "Projeto/Arquivos/iniciar_programa.py.md",
+    "Projeto/Arquivos/main.py.md",
+    "Projeto/Arquivos/plotar_grafico.py.md",
+    "Projeto/Arquivos/selecionar_imagem.py.md",
+    "Projeto/Arquivos/calc_percentual.py.md",
     "Resultados",
     "Experimentos/experimento 1 - maças",
     "Experimentos",
@@ -261,7 +261,6 @@
     "Sem título.canvas",
     "Projeto/Ideias iniciais",
     "Projeto",
-    "Sem título.base",
-    "Bibliotecas"
+    "Sem título.base"
   ]
 }

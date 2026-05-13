@@ -1,26 +1,25 @@
-#Importações
 import numpy as np
 
-#Definição da função
 def calc_percentuais(region_mask, region_gray):
-    #Guarda o numero de pixels que não sejam completamente pretor
+
+    # Seleciona apenas pixels válidos
     pixels_validos = region_gray[region_mask > 0]
 
-    #Para caso não houver numero de pixeis validos
+    # Caso não existam pixels válidos
     if len(pixels_validos) == 0:
-        return (0, 0, 0)
-    
-    #Define o padrão de cores para o calculo
-    escuros = np.sum(pixels_validos <= 85)
-    medios = np.sum((pixels_validos > 85) & (pixels_validos <= 170))
-    claros = np.sum(pixels_validos > 170)
+        return (0, 0)
 
-    #Armazena quantidade de pixeis calculados
+    # Pixels escuros
+    escuros = np.sum(pixels_validos <= 127)
+
+    # Pixels claros
+    claros = np.sum(pixels_validos > 127)
+
+    # Total de pixels
     total = len(pixels_validos)
 
-    #Realiza o calculo dos pixels
+    # Retorna percentuais
     return (
         escuros / total * 100,
-        medios / total * 100,
         claros / total * 100
     )

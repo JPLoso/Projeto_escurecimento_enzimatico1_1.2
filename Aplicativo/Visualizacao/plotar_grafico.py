@@ -1,23 +1,33 @@
-#Importa a biblioteca dos gráficos
-from matplotlib.pyplot import plot as plt
+import matplotlib.pyplot as plt
 
-#Define a função
 def plotar_grafico(valores):
-    #Define as 3 categorais do gráfico
-    categorias = ["Escuras", "Médias", "Claras"]
 
-    #Cria um gráfico de tamango 6x4 com o eixo X sendo categorias e o Y valores
-    plt.figure(figsize=(6,4))
-    plt.bar(categorias, valores)
+    categorias = ["Escuras", "Claras"]
 
-    #Mostra a porcentagem em cima da barra
-    for i, v in enumerate(valores):
-        plt.text(i, v+1, f"{v:.1f}%", ha='center')
+    plt.figure(figsize=(6, 4))
 
-    #Define o limite de 0 a 100 do gráfico, o titulo eo rotulo do eixo Y
-    plt.ylim(0,100)
-    plt.title("Distribuição de claridade")
+    barras = plt.bar(categorias, valores)
+
+    # Valores acima das barras
+    for barra in barras:
+
+        altura = barra.get_height()
+
+        plt.text(
+            barra.get_x() + barra.get_width() / 2,
+            altura + 1,
+            f"{altura:.1f}%",
+            ha='center'
+        )
+
+    plt.ylim(0, 100)
+
+    plt.title("Distribuição de Claridade")
+
     plt.ylabel("% dos Pixels")
 
-    #Abre a janela do gráfico
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+    plt.tight_layout()
+
     plt.show()

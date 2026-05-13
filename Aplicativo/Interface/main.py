@@ -1,3 +1,4 @@
+#main.py
 import tkinter as tk
 from tkinter import messagebox, filedialog
 
@@ -44,10 +45,33 @@ def main():
         except Exception as e:
             messagebox.showerror("Erro", str(e))
 
+
+    def clicar_json():
+        try:
+            caminho = filedialog.askopenfilename(
+                title="Selecionar arquivo JSON",
+                filetypes=[("JSON", "*.json")]
+            )
+
+            if not caminho:
+                return
+
+            from Aplicativo.Utils.carregar_json import carregar_json
+            dados = carregar_json(caminho)
+
+            plotar_varios_graficos(dados)
+
+            messagebox.showinfo("Sucesso", "Gráficos carregados do JSON!")
+
+        except Exception as e:
+            messagebox.showerror("Erro", str(e))
+    
+
     tk.Label(janela, text="Selecione uma imagem:").pack(pady=5)
     tk.Entry(janela, textvariable=entrada_imagem, width=50).pack(pady=5)
 
     tk.Button(janela, text="Buscar Imagem", command=clicar_buscar).pack(pady=5)
+    tk.Button(janela, text="Abrir JSON", command=clicar_json).pack(pady=5)
 
     botao_iniciar = tk.Button(janela, text="Gerar Gráfico", state="disabled", command=clicar_iniciar)
     botao_iniciar.pack(pady=5)
