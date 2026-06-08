@@ -1,7 +1,6 @@
 import numpy as np
 
 def calc_percentuais(region_mask, region_gray):
-
     # Seleciona apenas pixels válidos
     pixels_validos = region_gray[region_mask > 0]
 

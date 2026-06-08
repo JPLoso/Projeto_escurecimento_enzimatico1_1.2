@@ -1,7 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plotar_varios_graficos(resultados, limite=12):
+def plotar_varios_graficos(
+    resultados,
+    limite=12,
+    texto_lab=""
+):
 
     # Limita quantidade
     itens = list(resultados.items())[:limite]
@@ -20,7 +24,7 @@ def plotar_varios_graficos(resultados, limite=12):
     largura = 0.35
 
     # Cria figura
-    plt.figure(figsize=(14, 6))
+    plt.figure(figsize=(14, 8))
 
     # Barras
     barras_escuros = plt.bar(
@@ -41,11 +45,8 @@ def plotar_varios_graficos(resultados, limite=12):
 
     # Valores acima das barras
     for barras in [barras_escuros, barras_claros]:
-
         for barra in barras:
-
             altura = barra.get_height()
-
             plt.text(
                 barra.get_x() + barra.get_width() / 2,
                 altura + 1,
@@ -57,22 +58,37 @@ def plotar_varios_graficos(resultados, limite=12):
 
     # Configurações
     plt.xticks(x, tempos, rotation=45)
-
     plt.xlabel("Imagens / Processamentos")
-
     plt.ylabel("% dos Pixels")
-
     plt.title("Distribuição de Claridade")
-
     plt.ylim(0, 100)
 
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.grid(
+        axis='y',
+        linestyle='--',
+        alpha=0.7
+    )
 
     plt.legend(
         loc='center left',
         bbox_to_anchor=(1.02, 0.5)
     )
 
-    plt.tight_layout()
+    # Exibe resultados LAB na mesma janela
+    if texto_lab:
+        plt.figtext(
+            0.02,
+            0.01,
+            texto_lab,
+            fontsize=10,
+            bbox=dict(
+                facecolor="white",
+                alpha=0.8
+            )
+        )
+
+    plt.tight_layout(
+        rect=[0, 0.18, 1, 1]
+    )
 
     plt.show()

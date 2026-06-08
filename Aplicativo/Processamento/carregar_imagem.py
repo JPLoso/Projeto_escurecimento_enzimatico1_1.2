@@ -1,5 +1,3 @@
-#carregar_imagem.py
-#Importa o NumPy, o analisador de imagem e o PIL para caminhos
 import numpy as np
 import cv2
 from PIL import Image

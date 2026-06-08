@@ -1,4 +1,3 @@
-#Importa o analisador de imagem(cv2) e o numpy
 import cv2
 import numpy as np
 
