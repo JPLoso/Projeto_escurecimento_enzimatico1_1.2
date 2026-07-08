@@ -1,6 +1,9 @@
 import numpy as np
 
 def calc_percentuais(region_mask, region_gray):
+    #variavel de controle:
+    LIMIAR = 160
+    
     # Seleciona apenas pixels válidos
     pixels_validos = region_gray[region_mask > 0]
 
@@ -9,10 +12,10 @@ def calc_percentuais(region_mask, region_gray):
         return (0, 0)
 
     # Pixels escuros
-    escuros = np.sum(pixels_validos <= 127)
+    escuros = np.sum(pixels_validos <= LIMIAR)
 
     # Pixels claros
-    claros = np.sum(pixels_validos > 127)
+    claros = np.sum(pixels_validos > LIMIAR)
 
     # Total de pixels
     total = len(pixels_validos)

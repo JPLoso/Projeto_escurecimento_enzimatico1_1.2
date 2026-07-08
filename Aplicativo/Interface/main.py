@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
-
+from Aplicativo.Interface.interface_lab import abrir_janela_lab
+import os
 from Aplicativo.Processamento.analisar_pasta import analisar_pasta
 from Aplicativo.Visualizacao.plotar_varios_graficos import plotar_varios_graficos
 
@@ -15,15 +16,19 @@ def main():
             if not pasta:
                 return
 
-            resultados = analisar_pasta(pasta)
-            if not resultados:
+            arquivos = [
+                arq for arq in os.listdir(pasta)
+                if arq.lower().endswith((".png", ".jpg", ".jpeg", ".bmp"))
+            ]
+
+            if not arquivos:
                 messagebox.showwarning(
                     "Aviso",
                     "Nenhuma imagem encontrada"
                 )
                 return
 
-            plotar_varios_graficos(resultados)
+            abrir_janela_lab(janela, pasta, arquivos)
 
         except Exception as e:
             messagebox.showerror(
