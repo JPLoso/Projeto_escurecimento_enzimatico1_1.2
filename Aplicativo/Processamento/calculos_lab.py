@@ -1,1 +1,2 @@
-def realiza_calculo( ):
+def realiza_calculo():
+    pass
