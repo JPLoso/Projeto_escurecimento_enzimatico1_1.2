@@ -26,12 +26,7 @@ def analisar_pasta(caminho_pasta):
             try:
                 img = carregar_imagem(caminho_completo)
                 mask = criar_mascara(img)
-                valores = analisar_imagem(img, mask)
-
-                resultados[arquivo] = {
-                    "escuras": valores[0],
-                    "claras": valores[1]
-                }
+                resultados[arquivo] = analisar_imagem(img, mask)
             
             except Exception as e:
                 print(f"Erro ao processar {arquivo}: {e}")

@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from Aplicativo.Processamento.calcular_variacao import calcular_variacao
+from Aplicativo.Processamento.formulas_lab import calcular_variacao_ie
 
 def plotar_varios_graficos(
     resultados,
@@ -42,6 +44,37 @@ def plotar_varios_graficos(
         label="Claros",
         color="#F4C542"
     )
+
+    variacoes = calcular_variacao(resultados)
+
+    variacoes_ie = calcular_variacao_ie(resultados)
+
+    texto_ie = "Índice de Escurecimento\n\n"
+
+    for v in variacoes_ie:
+
+        texto_ie += (
+            f"{v['imagem']}\n"
+            f"IE: {v['ie']:.2f}\n"
+            f"{v['variacao']:+.1f}%\n\n"
+        )
+    
+    plt.figtext(
+        0.58,
+        0.02,
+        texto_ie,
+        fontsize=9,
+        bbox=dict(facecolor="white",alpha=0.8)
+    )
+
+    texto_variacao = "Variação (%)\n\n"
+
+    for v in variacoes:
+        texto_variacao += (
+            f"{v['comparacao']}\n"
+            f"Escuros: {v['escuros']:+.1f}%\n"
+            f"Claros : {v['claros']:+.1f}%\n\n"
+        )
 
     # Valores acima das barras
     for barras in [barras_escuros, barras_claros]:
@@ -86,6 +119,17 @@ def plotar_varios_graficos(
                 alpha=0.8
             )
         )
+
+    plt.figtext(
+        0.78,
+        0.02,
+        texto_variacao,
+        fontsize=9,
+        bbox=dict(
+            facecolor="white",
+            alpha=0.8
+        )
+    )
 
     plt.tight_layout(
         rect=[0, 0.18, 1, 1]
